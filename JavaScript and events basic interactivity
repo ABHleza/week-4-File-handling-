@@ -1,0 +1,74 @@
+HTML (index.html)
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Interactive Webpage</h1>
+    <form id="myForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <button id="submit-btn">Submit</button>
+    </form>
+    <div id="result"></div>
+
+    <button id="toggle-btn">Toggle Background Color</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
+CSS (styles.css)
+CSS
+body {
+    font-family: Arial, sans-serif;
+}
+
+#result {
+    margin-top: 20px;
+}
+
+.success {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+JavaScript (script.js)
+JavaScript
+// Get references to HTML elements
+const form = document.getElementById('myForm');
+const submitBtn = document.getElementById('submit-btn');
+const resultDiv = document.getElementById('result');
+const toggleBtn = document.getElementById('toggle-btn');
+
+// Add event listener to form submission
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    // Validate form fields
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+
+    if (name === '' || email === '') {
+        resultDiv.textContent = 'Please fill in all fields!';
+        resultDiv.classList.add('error');
+    } else {
+        resultDiv.textContent = 'Form submitted successfully!';
+        resultDiv.classList.add('success');
+    }
+});
+
+// Add event listener to toggle button
+toggleBtn.addEventListener('click', () => {
+    document.body.classList.toggle('dark-mode');
+});
