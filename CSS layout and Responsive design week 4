@@ -1,0 +1,158 @@
+Step 1: Basic HTML Structure
+Create an HTML file (index.html) with the following basic structure:
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content section -->
+    <main>
+        <section>
+            <h2>Welcome to our website!</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed sit amet nulla auctor, vestibulum magna sed, convallis ex.</p>
+        </section>
+        <section>
+            <h2>Our services</h2>
+            <ul>
+                <li>Service 1</li>
+                <li>Service 2</li>
+                <li>Service 3</li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2023 Responsive Webpage</p>
+    </footer>
+</body>
+</html>
+Step 2: Basic CSS Styles
+Create a CSS file (styles.css) with the following basic styles:
+CSS
+/* Global styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Header styles */
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+header nav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+/* Main content styles */
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2em;
+}
+
+section {
+    background-color: #f7f7f7;
+    padding: 1em;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    margin-top: 0;
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+    clear: both;
+}
+Step 3: Flexbox Layout
+Update the CSS to use Flexbox for the navigation menu:
+CSS
+header nav ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+Step 4: Grid Layout
+Update the CSS to use Grid for the main content section:
+CSS
+main {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    padding: 2em;
+}
+
+section {
+    grid-column: span 1;
+}
+Step 5: Media Queries
+Add media queries to make the layout responsive:
+CSS
+/* Mobile devices (max-width: 768px) */
+@media only screen and (max-width: 768px) {
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    header nav ul {
+        flex-direction: column;
+    }
+}
+
+/* Tablet devices (min-width: 769px) and (max-width: 1024px) */
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    main {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop devices (min-width: 1025px) */
+@media only screen and (min-width: 1025px) {
+    main {
+        grid-template-columns: repeat(3, 1fr);
+    }
