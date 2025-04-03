@@ -1,0 +1,56 @@
+HTML (index.html)
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="heading">Interactive Webpage</h1>
+    <button id="change-text-btn">Change Text</button>
+    <button id="toggle-style-btn">Toggle Style</button>
+    <button id="add-remove-element-btn">Add/Remove Element</button>
+    <div id="dynamic-element"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+CSS (styles.css)
+CSS
+#heading {
+    color: blue;
+}
+
+.dynamic-element {
+    background-color: yellow;
+    padding: 10px;
+}
+JavaScript (script.js)
+JavaScript
+// Get references to HTML elements
+const heading = document.getElementById('heading');
+const changeTextBtn = document.getElementById('change-text-btn');
+const toggleStyleBtn = document.getElementById('toggle-style-btn');
+const addRemoveElementBtn = document.getElementById('add-remove-element-btn');
+const dynamicElementContainer = document.getElementById('dynamic-element');
+
+// Task 1: Change text content dynamically
+changeTextBtn.addEventListener('click', () => {
+    heading.textContent = 'New heading text!';
+});
+
+// Task 2: Modify CSS styles via JavaScript
+toggleStyleBtn.addEventListener('click', () => {
+    heading.classList.toggle('red-text');
+});
+
+// Task 3: Add or remove an element when a button is clicked
+addRemoveElementBtn.addEventListener('click', () => {
+    const dynamicElement = document.createElement('div');
+    dynamicElement.classList.add('dynamic-element');
+    dynamicElement.textContent = 'This element was added dynamically!';
+    dynamicElementContainer.appendChild(dynamicElement);
+});
